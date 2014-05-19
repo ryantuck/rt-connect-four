@@ -19,8 +19,16 @@ public:
 	void printBoard();
 	
 	//member variables
-	int board[7][6];
+	int board[6][7];
 	bool player;
+	
+	int player1 = 1;
+	int player2 = 2;
+	
+	void addPieceToColumn(int player, int col);
+	
+	bool canAddToColumn(int col);
+	int piecesInColumn(int col);
 	
 };
 
