@@ -9,9 +9,11 @@ using namespace std;
 int main()
 {
 	ConnectFour cf;
-	cf.addPieceToColumn(1, 1);
-	cf.addPieceToColumn(2, 2);
-	cf.printBoard();
+	
+	while (1)
+	{
+		cf.takeTurn();
+	}
 	
     return 0;
 }

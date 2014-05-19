@@ -20,7 +20,7 @@ public:
 	
 	//member variables
 	int board[6][7];
-	bool player;
+	bool player1sTurn;
 	
 	int player1 = 1;
 	int player2 = 2;
@@ -29,6 +29,8 @@ public:
 	
 	bool canAddToColumn(int col);
 	int piecesInColumn(int col);
+	
+	void takeTurn();
 	
 };
 

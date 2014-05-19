@@ -16,18 +16,66 @@ ConnectFour::ConnectFour()
 		for(int c=0;c<7;c++)
 			board[r][c] = 0;
 	
+	player1sTurn = true;
+	
+	printBoard();
+}
+
+void ConnectFour::takeTurn()
+{
+	int colToAdd = 0;
+	
+	cout << endl;
+	cout << "Enter Column: ";
+	cin >> colToAdd;
+	cout << endl;
+	
+	if (player1sTurn)
+	{
+		addPieceToColumn(player1, colToAdd);
+	}
+	else
+	{
+		addPieceToColumn(player2, colToAdd);
+	}
+	player1sTurn = !player1sTurn;
+	
 	printBoard();
 }
 
 void ConnectFour::printBoard()
 {
+	cout << " --------------- " << endl;
+	
 	for(int r=0;r<6;r++)
 	{
-		for(int c=0;c<7;c++)
-			cout<< board[5-r][c] << " ";
+		cout << "| ";
 		
-		cout << endl;
+		for(int c=0;c<7;c++)
+		{
+			int val = board[5-r][c];
+			
+			if (val == 0)
+			{
+				cout << " ";
+			}
+			else if (val == 1)
+			{
+				cout << "X";
+			}
+			else
+			{
+				cout << "O";
+			}
+			cout << " ";
+		}
+		
+		cout << "|" << endl;
 	}
+	
+	cout << " --------------- " << endl;
+	cout << "  0 1 2 3 4 5 6  " << endl;
+	
 	cout << endl;
 }
 
