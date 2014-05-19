@@ -29,3 +29,52 @@ void ConnectFour::printBoard()
 		cout << endl;
 	}
 	cout << endl;
+}
+
+void ConnectFour::addPieceToColumn(int player, int col)
+{
+	if (canAddToColumn(col))
+	{
+		board[piecesInColumn(col)][col] = player;
+	}
+}
+
+bool ConnectFour::canAddToColumn(int col)
+{
+	bool check = true;
+	
+	if (piecesInColumn(col) == 6) check = false;
+	
+	return check;
+}
+
+int ConnectFour::piecesInColumn(int col)
+{
+	int count = 0;
+	
+	for (int n=0;n<6;n++)
+	{
+		if (board[n][col] != 0)
+		{
+			count++;
+		}
+	}
+	
+	return count;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
